@@ -8,7 +8,7 @@ app.use(cors())
 
 let rappers = {
     '21 Savage':{
-        'age': 28,
+        'age': 27,
         'birthName': 'Sheyaa Bin Abraham-Joseph',
         'birthLocation': 'London, England'
     },
