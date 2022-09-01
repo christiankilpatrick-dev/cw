@@ -14,3 +14,5 @@ function solution(string) {
 	});
 	return string.join('');
 }
+
+const solutionButBetter = (string) => string.replace(/[A-Z]/g, ' $&');
