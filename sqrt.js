@@ -17,3 +17,8 @@ function squareOrSquareRoot(array) {
 	}
 	return newArr;
 }
+
+const squareOrSquareRoot = (A) =>
+	A.map((x) =>
+		Number.isInteger(Math.sqrt(x)) ? Math.sqrt(x) : Math.pow(x, 2)
+	);
