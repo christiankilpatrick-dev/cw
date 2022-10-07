@@ -29,8 +29,8 @@ function fixString(str) {
 			case fixedStr[i] === '3':
 				fixedStr[i] = 'E';
 				break;
-			case fixedStr[i] === 'h':
-				fixedStr[i] = '4';
+			case fixedStr[i] === '4':
+				fixedStr[i] = 'h';
 				break;
 			case fixedStr[i] === '5':
 				fixedStr[i] = 'S';
@@ -41,11 +41,11 @@ function fixString(str) {
 			case fixedStr[i] === '7':
 				fixedStr[i] = 'L';
 				break;
-			case fixedStr[i] === 'B':
-				fixedStr[i] = '8';
+			case fixedStr[i] === '8':
+				fixedStr[i] = 'B';
 				break;
-			case fixedStr[i] === 'q':
-				fixedStr[i] = '9';
+			case fixedStr[i] === '9':
+				fixedStr[i] = 'q';
 				break;
 		}
 	}
