@@ -13,17 +13,14 @@
 // split string to array, loop through array checking if indexOf(char) === lastIndexOf(char)
 //
 const fixString = (str) => {
-	return str
+	const word = str.toLowerCase();
+	return word
 		.split('')
-		.map((x) =>
-			str.indexOf(x.toLowerCase()) === str.lastIndexOf(x.toLowerCase())
-				? '('
-				: ')'
-		)
+		.map((x) => (word.indexOf(x) === word.lastIndexOf(x) ? '(' : ')'))
 		.join('');
 };
 
-console.log(fixString('din'), '(((');
+console.log(fixString('Supralapsarian'));
 console.log(fixString('recede'), '()()()');
 console.log(fixString('Success'), ')())())');
 console.log(fixString('(( @'), '))((');
