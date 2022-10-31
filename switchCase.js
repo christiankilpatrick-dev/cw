@@ -1,37 +1,21 @@
-// Write a function usinng switch/case that returns a planet name based on its index ( the parameter) in the solar system (1 -> 'Mercury')'
+// The function should take three arguments - operation(string/char), value1(number), value2(number).
+// The function should return result of numbers after applying the chosen operation.
 
-function getPlanetName(id) {
-	var name;
-	switch (id) {
-		case 1:
-			name = 'Mercury';
-			break;
-		case 2:
-			name = 'Venus';
-			break;
-		case 3:
-			name = 'Earth';
-			break;
-		case 4:
-			name = 'Mars';
-			break;
-		case 5:
-			name = 'Jupiter';
-			break;
-		case 6:
-			name = 'Saturn';
-			break;
-		case 7:
-			name = 'Uranus';
-			break;
-		case 8:
-			name = 'Neptune';
-			break;
+// Examples(Operator, value1, value2) --> output
+// ('+', 4, 7) --> 11
+// ('-', 15, 18) --> -3
+// ('*', 5, 5) --> 25
+// ('/', 49, 7) --> 7
+
+function basicOp(operation, value1, value2) {
+	switch (operation) {
+		case '+':
+			return value1 + value2;
+		case '-':
+			return value1 - value2;
+		case '*':
+			return value1 * value2;
+		case '/':
+			return value1 / value2;
 	}
-
-	return name;
 }
-
-console.log(getPlanetName(2), 'Venus');
-console.log(getPlanetName(5), 'Jupiter');
-console.log(getPlanetName(3), 'Earth');
