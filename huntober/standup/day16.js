@@ -6,7 +6,7 @@
 const average = (arr) => {
 	let lengths = [];
 	arr.forEach((x) => lengths.push(x.length));
-	let avg = Math.ceil(lengths.reduce((a, c) => a + c) / lengths.length);
+	let avg = Math.round(lengths.reduce((a, c) => a + c) / lengths.length);
 	return arr.map((x) => x[0].repeat(avg));
 };
 
