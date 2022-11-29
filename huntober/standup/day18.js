@@ -13,19 +13,30 @@ const dup = (array) => {
 	}
 	return words;
 };
-console.log(dup(['abracadabra', 'allottee', 'assessee']), [
+
+const dup1 = (s) => {
+	return s.map((w) => {
+		return w
+			.split('')
+			.filter((c, i, arr) => {
+				return c !== arr[i - 1];
+			})
+			.join('');
+	});
+};
+console.log(dup1(['abracadabra', 'allottee', 'assessee']), [
 	'abracadabra',
 	'alote',
 	'asese',
 ]);
-console.log(dup(['kelless', 'keenness']), ['keles', 'kenes']);
+console.log(dup1(['kelless', 'keenness']), ['keles', 'kenes']);
 console.log(
-	dup(['ccooddddddewwwaaaaarrrrsssss', 'piccaninny', 'hubbubbubboo']),
+	dup1(['ccooddddddewwwaaaaarrrrsssss', 'piccaninny', 'hubbubbubboo']),
 	['codewars', 'picaniny', 'hubububo']
 );
-console.log(dup(['abracadabra', 'allottee', 'assessee']), [
+console.log(dup1(['abracadabra', 'allottee', 'assessee']), [
 	'abracadabra',
 	'alote',
 	'asese',
 ]);
-console.log(dup(['kelless', 'keenness']), ['keles', 'kenes']);
+console.log(dup1(['kelless', 'keenness']), ['keles', 'kenes']);
