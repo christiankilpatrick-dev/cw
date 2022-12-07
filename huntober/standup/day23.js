@@ -10,8 +10,22 @@ const numJewelsInStones = (jewels, stones) => {
 	let count = 0;
 	stones
 		.split('')
-		.forEach((x, i) => (jewels.includes(x) ? count++ : (count += 0)));
+		.forEach((x) => (jewels.includes(x) ? count++ : (count += 0)));
 	return count;
 };
-console.log(numJewelsInStones('aA', 'aAAbbbb'), 3);
-console.log(numJewelsInStones('z', 'ZZ'), 0);
+
+const findJewels = (jewels, stones) => {
+	let stuff = {};
+	for (let i = 0; i < jewels.length; i++) {
+		stuff[jewels[i]] = true;
+	}
+	let count = 0;
+	for (let i = 0; i < stones.length; i++) {
+		stuff[stones[i]] ? count++ : (count += 0);
+	}
+
+	return count;
+};
+
+console.log(findJewels('aA', 'aAAbbbb'), 3);
+console.log(findJewels('z', 'ZZ'), 0);
