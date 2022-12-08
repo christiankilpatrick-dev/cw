@@ -21,3 +21,4 @@ const max = (str) => {
 };
 
 console.log(max('Hello World!'), 'l');
+console.log(max('this is a test'), 't');
