@@ -21,7 +21,3 @@ const max = (str) => {
 };
 
 console.log(max('Hello World!'), 'l');
-
-/*
-Hey man! I actually just got a job '' I signed the offer on Friday and I cant believe i! lol Here's my site and resume though, I appreciate you keeping me in mind! Will defintely do the same for you. How has your hunt been going though? Any warm leads?
-*/
