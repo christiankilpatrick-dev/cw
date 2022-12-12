@@ -1,12 +1,12 @@
 // Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
 const uniqueSet = (nums) => {
-	let cache = [];
+	let cache = {};
 	for (let i = 0; i < nums.length; i++) {
-		if (cache.includes(nums[i])) {
+		if (cache[nums[i]]) {
 			return true;
 		} else {
-			cache.push(nums[i]);
+			cache[nums[i]] = true;
 		}
 	}
 	return false;
