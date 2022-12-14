@@ -5,13 +5,8 @@
 const majority = (nums) => {
 	let csh = {};
 	for (let i = 0; i < nums.length; i++) {
-		if (csh[nums[i]]) {
-			csh[nums[i]]++;
-		} else {
-			csh[nums[i]] = 1;
-		}
+		csh[nums[i]] = csh[nums[i]] + 1 || 1;
 	}
-
 	let max = Math.max(...Object.values(csh));
 	return Number(Object.keys(csh).find((key) => csh[key] === max));
 };
