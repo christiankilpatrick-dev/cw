@@ -16,6 +16,17 @@ const fib = (num) => {
 	}
 };
 
-console.log(fib(2), 1);
-console.log(fib(3), 2);
-console.log(fib(4), 3);
+// no recursion
+
+const fibbi = (n) => {
+	let arr = [0, 1];
+	for (let i = 2; i <= n; i++) {
+		arr[i] = arr[i - 1] + arr[i - 2];
+	}
+
+	return arr[n];
+};
+
+console.log(fibbi(2), 1);
+console.log(fibbi(3), 2);
+console.log(fibbi(4), 3);
