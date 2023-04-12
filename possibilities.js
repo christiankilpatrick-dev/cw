@@ -5,3 +5,7 @@
 // a=[1,2,0,3]
 // a.length-1=3
 // a includes [0,3] ,hence the function should return true
+
+function isAllPossibilities(a) {
+  return a.length > 0 && a.every((x, i) => a.includes(i));
+}
