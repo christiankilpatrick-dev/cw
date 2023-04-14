@@ -9,3 +9,26 @@
 // a. it contains at least one odd value [11,9]
 // b. the maximum value in the array is 20 which is even
 // c. the two odd values (11 and 9) are greater than all the even values that are not equal to 20 (the maximum), i.e., [4, 2, 8]
+
+const isInertial = (arr) => {
+  const evens = new Set();
+  let hasOdd = false;
+  let safeInteger = Number.MAX_SAFE_INTEGER;
+  let minOdd = safeInteger;
+  let maxOdd = -safeInteger;
+  let maxEven = -safeInteger;
+
+  for (let n of arr) {
+    if (n & 1) {
+      n < minOdd && (minOdd = n);
+      n > maxOdd && (maxOdd = n);
+      hasOdd = true;
+    } else {
+      n > maxEven && (maxEven = n);
+      evens.add(n);
+    }
+  }
+
+  evens.delete(maxEven);
+  return hasOdd && maxEven > maxOdd && Math.max(...evens) < minOdd;
+};
