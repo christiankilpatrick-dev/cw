@@ -5,3 +5,9 @@
 // If the input is an empty list, return an empty list; otherwise the input will always be a valid list of one or more grades.
 
 // Please do vote, rank, and provide any feedback on the kata.
+
+const sortGrades = (grades) => {
+  const value = (x) => ({ VB: -1, "V0+": 0.5 }[x] || Number(x.slice(1)));
+
+  return grades.sort((a, b) => value(a) - value(b));
+};
