@@ -12,3 +12,16 @@
 // For non-numeric input, the function should return [0].
 
 // Don't forget to rate this kata!
+
+function chickenOptions(n) {
+  if (typeof n !== "number") return [0];
+  let res = [0];
+  const hash = [3, 6, 9, 10, 12, 13, 15, 16];
+  let i = 1;
+  while (i <= n) {
+    if (i >= 18) res.push(i);
+    else if (hash.includes(i)) res.push(i);
+    i++;
+  }
+  return res;
+}
