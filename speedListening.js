@@ -14,3 +14,18 @@
 // speedListen("00:00:55", 2) => "00:00:27" // NOT "00:00:28"
 
 // speedListen("01:20:00", 1.5) => "00:53:20"
+
+function speedListen(audioLength, playSpeed) {
+  let totalSeconds = audioLength.split(":").reduce((a, c) => 60 * a + +c),
+    hours,
+    minutes,
+    seconds;
+
+  totalSeconds = totalSeconds / playSpeed;
+  (hours = (Math.floor(totalSeconds / 3600) + "").padStart(2, "0")),
+    (totalSeconds = totalSeconds %= 3600);
+  minutes = (Math.floor(totalSeconds / 60) + "").padStart(2, "0");
+  seconds = (Math.floor(totalSeconds % 60) + "").padStart(2, "0");
+
+  return hours + ":" + minutes + ":" + seconds;
+}
