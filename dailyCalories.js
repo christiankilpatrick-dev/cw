@@ -15,3 +15,12 @@
 // b) moderately active,  activity factor  = 1.55
 // c) very active,  activity factor  = 1.7
 // d) extremely active,  activity factor = 1.9
+
+function calorie(member) {
+  let [name, sex, age, h, w] = member;
+  let cal = 10 * w + 6.25 * h - 5 * age + 5 - 166 * (sex == "f");
+  let af = { l: 1.2, m: 1.55, v: 1.7, e: 1.9 }[member[5][0]];
+  return `${name}´s daily calorie requirement is ${(
+    Math.round(cal * af * 100) / 100
+  ).toFixed(2)} kcal.`;
+}
