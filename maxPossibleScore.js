@@ -7,3 +7,18 @@
 // Questions are case sensitive.
 
 // Example: maxPossibleScore({"a": 1, "b": 2, "c": 3}, ["a", "c"]); // 1 * 2 + 2 + 3 * 2 = 10
+
+function maxPossibleScore(obj, arr) {
+  let maxPoints = 0;
+  Object.keys(obj).forEach((item) =>
+    arr.includes(item) ? (maxPoints += 2 * obj[item]) : (maxPoints += obj[item])
+  );
+  return maxPoints;
+}
+
+console.log(maxPossibleScore({ a: 1, b: 2, c: 3 }, ["a", "c"]), 10);
+console.log(maxPossibleScore({ a: 1 }, []), 1);
+console.log(maxPossibleScore({ a: 1 }, ["a"]), 2);
+console.log(maxPossibleScore({ a: 1, b: 14 }, ["b"]), 29);
+console.log(maxPossibleScore({ a: 1, b: 2, c: 4 }, ["a", "b", "c"]), 14);
+console.log(maxPossibleScore({ a: 2, b: 5, c: 8 }, ["c"]), 23);
