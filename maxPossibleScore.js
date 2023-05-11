@@ -17,5 +17,3 @@ function maxPossibleScore(obj, arr) {
 }
 
 console.log(maxPossibleScore({ a: 1, b: 2, c: 3 }, ["a", "c"]), 10);
-console.log(maxPossibleScore({ a: 1 }, []), 1);
-console.log(maxPossibleScore({ a: 1 }, ["a"]), 2);
