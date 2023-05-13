@@ -12,3 +12,14 @@
 // Latin squares have many practical uses, for example in error-correcting-codes and the design of agricultural experiments. See https://en.wikipedia.org/wiki/Latin_square for more details. Sudoku is a special type of 9 x 9 latin square, with additional conditions.
 
 // Task: Write a function that returns a latin square for any positive integer n.
+
+function makeLatinSquare(n) {
+  const array = [];
+  for (let i = 1; n >= i; i++) {
+    array.push(i);
+  }
+  const latianSquare = array.map((el, id, arr) => {
+    return [...arr.slice(id + 1), ...arr.slice(0, id + 1)];
+  });
+  return latianSquare;
+}
