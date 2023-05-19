@@ -4,8 +4,14 @@
 
 // For example:
 
-orArrays([1, 2, 3], [1, 2, 3]) === [1, 2, 3];
-orArrays([1, 2, 3], [4, 5, 6]) === [5, 7, 7];
-orArrays([1, 2, 3], [1, 2]) === [1, 2, 3];
-orArrays([1, 2], [1, 2, 3]) === [1, 2, 3];
-orArrays([1, 2, 3], [1, 2, 3], 3) === [1, 2, 3];
+function orArrays(a, b, c = 0) {
+  return a
+    .map((x, i) => x | (b[i] || c))
+    .concat(b.slice(a.length).map((x) => x | c));
+}
+
+console.log(orArrays([1, 2, 3], [1, 2, 3]), [1, 2, 3]);
+console.log(orArrays([1, 2, 3], [4, 5, 6]), [5, 7, 7]);
+console.log(orArrays([1, 2, 3], [1, 2]), [1, 2, 3]);
+console.log(orArrays([1, 2], [1, 2, 3]), [1, 2, 3]);
+console.log(orArrays([1, 2, 3], [1, 2, 3], 3), [1, 2, 3]);
