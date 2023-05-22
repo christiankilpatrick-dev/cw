@@ -19,3 +19,13 @@
 
 // [F(n), F(n+1), false] or {F(n), F(n+1), 0} or (F(n), F(n+1), False)
 // F(n) being the smallest one such as F(n) * F(n+1) > prod.
+
+function productFib(prod) {
+  var n = 0;
+  var nPlus = 1;
+  while (n * nPlus < prod) {
+    nPlus = n + nPlus;
+    n = nPlus - n;
+  }
+  return [n, nPlus, n * nPlus === prod];
+}
