@@ -11,3 +11,15 @@
 
 // Input >> Output Examples
 // arrayLeaders ({1, 2, 3, 4, 0}) ==> return {4}
+
+var arrayLeaders = (numbers) => {
+  const sumOfAllAfter = [];
+
+  let sum = 0;
+  for (let i = numbers.length - 1; i >= 0; i--) {
+    sumOfAllAfter[i] = sum;
+    sum += numbers[i];
+  }
+
+  return numbers.filter((num, i) => num > sumOfAllAfter[i]);
+};
